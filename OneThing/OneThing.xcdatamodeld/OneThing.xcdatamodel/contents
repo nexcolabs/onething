@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Items" representedClassName="Items" syncable="YES" codeGenerationType="class">
+        <attribute name="doNow" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <relationship name="whichSection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sections" inverseName="allItems" inverseEntity="Sections" syncable="YES"/>
+    </entity>
+    <entity name="Sections" representedClassName="Sections" syncable="YES" codeGenerationType="class">
+        <attribute name="sectionName" attributeType="String" syncable="YES"/>
+        <relationship name="allItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Items" inverseName="whichSection" inverseEntity="Items" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Items" positionX="128.953125" positionY="-13.75390625" width="128" height="88"/>
+        <element name="Sections" positionX="-73.22265625" positionY="-3.70703125" width="128" height="73"/>
+    </elements>
 </model>
